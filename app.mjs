@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 mongoDbCon();
 
 //Router
-app.use('/', router)
+app.use('/api', router)
 
 //Para las rutas no encontradas
 app.use((req,res)=>{
