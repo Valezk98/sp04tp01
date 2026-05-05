@@ -1,0 +1,90 @@
+
+  <h1>Lista de superheroes</h1>
+
+  <!-- PRIMERO, un if, que muestra un mensaje para cuando no haya superheroes, y en caso de que eso no sea asi, ahi recien se crea la tabla -->
+  <% if (!superheroes || superheroes.length === 0) { %>
+    <div class="listaVacia">No hay superhéroes cargados.</div>
+  <% } else { %> 
+    <table>
+      <thead>
+        <tr>
+
+          <th>Acciones</th>
+          <th>Nombre</th>
+          <th>Nombre real</th>
+          <th>Edad</th>
+          <th>Planeta</th>
+          <th>Debilidad</th>
+          <th>Poderes</th>
+          <th>Aliados</th>
+          <th>Enemigos</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <!-- SEGUNDO. En el body de la tabla se recorre superheroes con el foreach para mostrar nombres, edad, etc en su repectiva celda -->
+
+        <% superheroes.forEach(element => { %>
+         
+        <% }) %>
+
+        <% superheroes.forEach((superheroe) => { %>
+          <tr>
+            <td>
+              
+              <a href="/api/heroes/<%= superheroe.id %>/editar-superheroe"> 
+                <img src="/image/edit.png" width="30px"></a>
+                &nbsp;
+              <a href="/api/heroes/<%= superheroe.id %>/eliminado" onclick="return confirm('Seguro que deseas eliminar a <%= superheroe.nombreSuperheroe %>? Esta acción no se puede deshacer')">
+                <img src="/image/eliminar.png" width="30px"></a></td>
+
+            <td><%= superheroe.nombreSuperheroe ?? '-' %></td> <!-- Se muestra el valor solicitado o en su defecto un guion -->
+            <td><%= superheroe.nombreReal ?? '-' %></td>
+            <td><%= superheroe.edad ?? '-' %></td>
+            <td><%= superheroe.planetaOrigen ?? '-' %></td>
+            <td><%= superheroe.debilidad ?? '-' %></td>
+
+            <!-- Esto maneja los campos donde se agrega mas de un valor porque van a ir a su respectivo array -->
+            <td>
+
+              <% if (Array.isArray(superheroe.poderes) && superheroe.poderes.length) { %>
+
+                <% superheroe.poderes.forEach((poderes) => { %>
+                  <span class="separadorLista"><%= poderes %></span>
+                <% }) %>
+
+              <% } else { %>
+                -
+              <% } %>
+            </td>
+            <td>
+
+              <% if (Array.isArray(superheroe.aliados) && superheroe.aliados.length){ %>
+
+                <% superheroe.aliados.forEach((aliados) => { %>
+                  <span class="separadorLista"><%= aliados %></span>
+                <% }) %>
+
+              <% } else { %>
+                - 
+              <% } %>
+              </td>
+            <td>
+
+              <% if (Array.isArray(superheroe.enemigos) && superheroe.enemigos.length){ %>
+
+                <% superheroe.enemigos.forEach((enemigos) => { %>
+                  <span class="separadorLista"><%= enemigos %></span>
+                <% }) %>
+
+              <% } else { %>
+                - 
+              <% } %>
+            </td>                       
+
+          </tr>
+        <% }) %>
+        
+      </tbody>
+    </table>
+  <% } %>

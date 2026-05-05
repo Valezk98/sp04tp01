@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a SuperheroDB</title>
+
+
+    <style>
+
+        *{
+            font-family: 'Quicksand', sans-serif;
+        }
+        body {
+            color: white;
+            background-image: url('/image/background.png');
+            background-repeat: no-repeat;  
+            background-size: cover;       
+            background-attachment: fixed;
+            background-position: center; 
+            backdrop-filter: blur(5px);
+        }
+
+        h1{
+            font-weight:700;
+            font-size: 3rem;
+            text-shadow: 5px 5px 5px black
+
+        }
+
+        .mainContainer {
+            display: flex;
+                flex-direction: column;
+                align-items:center;
+                justify-content: center;
+            height: 100vh;
+            width: 50%;
+            margin-left:auto;
+            margin-right: auto;
+        }
+        .buttonsContainer {
+            display: flex;
+                flex-direction: row;
+                align-items:center;
+                justify-content: center;
+                gap:20px;
+        }
+        .button {
+            display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+        }
+
+        img:hover{
+            scale: 1.1;
+            transition: 500ms;
+        }
+
+        p{
+            text-shadow: 5px 5px 5px black
+        }
+
+        .resaltadorTitulo{
+            color:blueviolet
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="titleContainer">
+            <h1>Bienvenido a <span class="resaltadorTitulo">SuperheroDB</span></h1>
+        </div>
+
+
+        <div class="buttonsContainer">
+            <div class="button">
+                <div><a href="/api/heroes"><img src="/image/heroes.png" alt="Ir a la lista de superheroes" width="80px"></a>
+                </div>
+                <p>Tu lista de superheroes</p>
+            </div>
+            <div class="button">
+                <div><a href="/api/heroes/agregar-superheroe"><img src="/image/agregar.png" alt="Agrega un heroe" width="80px"></a>
+                </div>
+                <p>Agregar un superheroe</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

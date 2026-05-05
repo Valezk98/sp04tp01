@@ -1,0 +1,59 @@
+
+    <h1>Editar superheroe</h1>
+
+    <form method="POST" action="<%= superheroe ? `/api/heroes/${superheroe._id}/editado` : '/api/heroes/editado' %>">
+        <div class="seccionGrid">
+            <label>
+                <span class="sombreado-txt">Nombre de superhéroe</span>
+                <input name="nombreSuperheroe" required value="<%= superheroe ? superheroe.nombreSuperheroe : '' %>">
+            </label>
+            <label>
+                <span class="sombreado-txt">Nombre real</span>
+                <input name="nombreReal" required value="<%= superheroe ? superheroe.nombreReal : '' %>">
+            </label>
+        </div>
+
+        <div class="seccionGrid">
+            <label>
+                <span class="sombreado-txt">Edad</span>
+                <input name="edad" type="number" min="0" required value="<%= superheroe ? superheroe.edad : '' %>">
+            </label>
+            <label>
+                <span class="sombreado-txt">Creador</span>
+                <input name="creador" required value="<%= superheroe ? superheroe.creador : '' %>">
+            </label>
+        </div>
+
+        <div class="seccionGrid">
+            <label>
+                <span class="sombreado-txt">Planeta de origen</span>
+                <input name="planetaOrigen" required value="<%= superheroe ? superheroe.planetaOrigen : '' %>">
+            </label>
+            <label>
+                <span class="sombreado-txt">Debilidad</span>
+                <input name="debilidad" required value="<%= superheroe ? superheroe.debilidad : '' %>">
+            </label>
+        </div>
+
+        <label>
+            <span class="sombreado-txt">Poderes</span>
+            <input name="poderes" required value="<%= superheroe && Array.isArray(superheroe.poderes) ? superheroe.poderes.join(', ') : (superheroe ? superheroe.poderes : '') %>">
+            <span class="pista"><span style="color:red">IMPORTANTE</span>. Separa con comas. Ej: volar, fuerza sobrehumana</span>
+        </label>
+
+        <label>
+            <span class="sombreado-txt">Aliados</span>
+            <input name="aliados" required value="<%= superheroe && Array.isArray(superheroe.aliados) ? superheroe.aliados.join(', ') : (superheroe ? superheroe.aliados : '') %>">
+            <span class="pista"><span style="color:red">IMPORTANTE</span>. Separa con comas. Ej: Hulk, Wonder Woman</span>
+        </label>
+
+        <label>
+            <span class="sombreado-txt">Enemigos</span>
+            <input name="enemigos" value="<%= superheroe && Array.isArray(superheroe.enemigos) ? superheroe.enemigos.join(', ') : (superheroe ? superheroe.enemigos : '') %>">
+            <span class="pista"><span style="color:red">IMPORTANTE</span>. Separá con comas. Ej: Thanos, Green goblin</span>
+        </label>
+
+        <div class="botones">
+            <button type="submit" class="btnGuardar">Guardar</button>
+            <button type="reset" class="btnBorrar">Borrar</button>
+        </div>

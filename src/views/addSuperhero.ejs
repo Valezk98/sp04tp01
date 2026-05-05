@@ -1,0 +1,64 @@
+
+
+    <h1>Agregar superheroe</h1>
+
+    <form method="POST" action="/api/heroes/agregado">
+        <div class="seccionGrid">
+            <label>
+                <span class="sombreado-txt">Nombre de superhéroe</span>
+                <input name="nombreSuperheroe" required>
+            </label>
+            <label>
+                <span class="sombreado-txt">Nombre real</span>
+                <input name="nombreReal" required>
+            </label>
+        </div>
+
+        <div class="seccionGrid">
+            <label>
+                <span class="sombreado-txt">Edad</span>
+                <input name="edad" type="number" min="0" required>
+            </label>
+            <label>
+                <span class="sombreado-txt">Creador</span>
+                <input name="creador" required>
+            </label>
+        </div>
+
+        <div class="seccionGrid">
+            <label>
+                <span class="sombreado-txt">Planeta de origen</span>
+                <input name="planetaOrigen" required>
+            </label>
+            <label>
+                <span class="sombreado-txt">Debilidad</span>
+                <input name="debilidad" required>
+            </label>
+        </div>
+
+        <label>
+            <span class="sombreado-txt">Poderes</span>
+            <input name="poderes" required>
+            <span class="pista"><span style="color:red">IMPORTANTE</span>. Separa con comas. Ej: volar, fuerza sobrehumana</span>
+        </label>
+
+        <label>
+            <span class="sombreado-txt">Aliados</span>
+            <input name="aliados" required>
+            <span class="pista"><span style="color:red">IMPORTANTE</span>. Separa con comas. Ej: Hulk, Wonder Woman</span>
+        </label>
+
+        <label>
+            <span class="sombreado-txt">Enemigos</span>
+            <input name="enemigos">
+            <span class="pista"><span style="color:red">IMPORTANTE</span>. Separá con comas. Ej: Thanos, Green goblin</span>
+        </label>
+
+        <div class="botones">
+            <button type="submit" class="btnGuardar">Guardar</button>
+            <button type="reset" class="btnBorrar">Borrar</button>
+        </div>
+        
+    </form>
+</body>
+</html>
