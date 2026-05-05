@@ -17,7 +17,6 @@ app.set('views', path.resolve('./views'))
 app.set('layout','layout')
 app.use(expressEjsLayouts);
 
-//
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.set('views', path.join(__dirname, 'src', 'views'));
@@ -34,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 mongoDbCon();
 
 //Router
-app.use('/api', router)
+app.use('/', router)
 
 //Para las rutas no encontradas
 app.use((req,res)=>{
