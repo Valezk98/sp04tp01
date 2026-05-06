@@ -80,4 +80,5 @@ router.get('/heroes/info', (req, res)=>{
     res.render('info', {title: "Sobre mi"})
 })
 
+
 export default router;

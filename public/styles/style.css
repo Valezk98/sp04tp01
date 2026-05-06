@@ -15,15 +15,12 @@ body {
     background-color: #000000;
 }
 
-h1 { 
+h1, h2, h3 { 
     margin: 0 0 16px;
+    cursor: default;
+    text-shadow: 3px 4px 9px black;
    }
 
-.meta { 
-    color: #555;
-    margin-bottom: 16px;
-  }
-  
 table { 
     width: 100%; 
     border-collapse: collapse;
@@ -151,6 +148,19 @@ label {
     align-items: center;
     flex-direction: column;
     padding: 20px;
+  }
+
+  .errorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ERROR400Causas li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-shadow: 3px 4px 9px black;
+    font-weight: 600;
   }
 
   @media (max-width: 720px)

@@ -37,14 +37,10 @@ mongoDbCon();
 app.use('/api', router)
 
 //Para las rutas no encontradas
-app.use((req,res)=>{
-    res.status(404).send(
-        {
-            mensaje: 'Ruta no encontrada'
-        }
-    )
-})
 
+app.use((req, res) =>{
+    res.status(404).render('ERROR404', { title: 'Error'})
+})
 
 //Iniciar el servidor
 
